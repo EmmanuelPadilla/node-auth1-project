@@ -4,7 +4,7 @@ const helmet = require('helmet')
 const morgan = require('morgan')
 
 const session = require('express-session')
-const sessionStore= require('connect-session-knex')(session)
+const sessionStore = require('connect-session-knex')(session)
 
 const SECRET = process.env.SECRET
 
@@ -33,7 +33,7 @@ server.use(session({
 }))
 
 const userRouter = require('../users/users-router')
-server.use('/api/users', userRouter)
+server.use('/api/', userRouter)
 
 
 
