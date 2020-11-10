@@ -1,7 +1,7 @@
-const db = require("../database/connection.js");
+const db = require("../database/dbconfig");
 
 module.exports = {
-  add,
+  newUser,
   find,
   findBy,
   findById,
@@ -15,7 +15,7 @@ function findBy(filter) {
   return db("users").where(filter).orderBy("id");
 }
 
-async function add(user) {
+async function newUser(user) {
   try {
     const [id] = await db("users").insert(user, "id");
 
